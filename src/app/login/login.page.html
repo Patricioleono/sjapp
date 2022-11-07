@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">San Jose Farms</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-padding">
+<form #loginForm="ngForm">
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text" placeholder="Ingrese Usuario" name="user" [(ngModel)]="usuario" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" placeholder="Ingrese Contraseña" name="pass" [(ngModel)]="password" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" type="submit" (click)="logIn(usuario, password)">Ingresar</ion-button>
+</form>
+</div>
+</ion-content>
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <p class="ion-text-center">
+      Since 1989
+    </p>
+  </ion-toolbar>
+</ion-footer>

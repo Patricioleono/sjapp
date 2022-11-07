@@ -1,0 +1,22 @@
+<ion-menu contentId="main-content" menuId="first">
+      
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu de Servicios</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false">
+        <ion-item [routerDirection]="'root'" [routerLink]="'despacho'">
+          <ion-icon slot="start" [name]="'list'"></ion-icon>
+          <ion-label>
+            Despacho
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+
+</ion-menu> 

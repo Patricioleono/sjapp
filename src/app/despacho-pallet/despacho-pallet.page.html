@@ -1,0 +1,34 @@
+<ion-header mode="ios" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Despacho De Pallet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="ion-text-center">
+    <ion-label position="floating">Validar Pallet</ion-label>
+    <ion-input type="text" placeholder="Ingrese N° Pallet" name="pallet" [(ngModel)]="fPallet"></ion-input>
+    <ion-button shape="round" type="submit" (click)="validatePallets(fPallet)">Validar Pallets</ion-button>
+  </ion-item>
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> N° Pallet</th>
+        <th> Cant. Cajas</th>
+        <th> Total Kg</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let res of resData; let i = index">
+      <tr>
+        <td>{{res.nPallets}}</td>
+        <td>{{res.cantidad}}</td>
+        <td>{{res.kg}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ion-item>
+    <ion-button shape="round" type="submit" (click)="fRequest()" [disabled]="isDisabled">Despachar Pallets</ion-button>
+  </ion-item>
+</ion-content>

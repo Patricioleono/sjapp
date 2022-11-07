@@ -1,0 +1,8 @@
+{
+  "name": "appFirst",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

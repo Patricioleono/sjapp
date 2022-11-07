@@ -1,0 +1,20 @@
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingresado Exitosamente</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ dataNew }}
+      <ion-list *ngFor="let fRes of dataNew">
+        <hr />
+        {{fRes.MESSAGE}}
+        <br />
+        <hr />
+      </ion-list>
+    </ion-card-content>
+    <ion-item>
+      <ion-button expand="full" type="submit" (click)="redirectHome()">Volver</ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>

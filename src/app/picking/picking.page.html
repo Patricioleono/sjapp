@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Picking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="ion-text-center">
+    <ion-label position="floating">Agregar Lotes</ion-label>
+    <ion-textarea inputmode="text" [(ngModel)]="busquedaFolios" [autoGrow]="true"></ion-textarea>
+    <ion-button shape="round" type="submit" (click)="bFolios(busquedaFolios)">Validar Lotes</ion-button>
+  </ion-item>
+
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> Material</th>
+        <th> Almacen</th>
+        <th> Cant. SAP</th>
+        <th> Cant. Lotes</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of itemFolio">
+      <tr>
+        <td> {{ item.material }}</td>
+        <td> {{ item.almacen }}</td>
+        <td> {{ item.kg }}  {{ item.gramaje }}</td>
+        <td> {{ item.cantidad }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ion-item>
+    <ion-button expand="full" shape="round" type="submit" [disabled]="isDisabled" (click)="openModal()" id="open-modal">Finalizar Despacho</ion-button>
+  </ion-item>
+</ion-content>
+
+
+
+<ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <ng-template>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Ingresado Exitosamente</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list *ngFor="let fRes of fRequest">
+          <hr />
+          {{fRes.MESSAGE}}
+          <br />
+          <hr />
+        </ion-list>
+      </ion-card-content>
+      <ion-item>
+        <ion-button expand="full" type="submit" (click)="redirectHome()">Volver</ion-button>
+      </ion-item>
+    </ion-card>
+  </ng-template>
+</ion-modal>
